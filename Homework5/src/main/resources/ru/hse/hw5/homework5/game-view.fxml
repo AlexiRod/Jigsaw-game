@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.hse.hw5.homework5.app.controllers.GameController">
+    <GridPane fx:id="gridPane" prefHeight="360.0" prefWidth="360.0" layoutX="15" layoutY="15"/>
+    <VBox fx:id="vBox" spacing="10" style="-fx-border-color: gray;" alignment="CENTER">
+        <Label fx:id="lTime"
+               style="-fx-font: TimesNewRoman; -fx-font-size: 18" text="Время игры: 0m 0s"/>
+        <Label style="-fx-font: TimesNewRoman; -fx-font-size: 18" text="Следующая фигура:"/>
+
+        <Button fx:id="figurePlace" style="-fx-border-color: black; -fx-background-color: white;"/>
+        <Button fx:id="bStartGame"
+                style="-fx-border-color: black; -fx-background-color: white; -fx-font: TimesNewRoman; -fx-font-size: 18"
+                text="Старт игры" onMouseClicked="#onStartGameButtonClick"/>
+        <Button fx:id="bEndGame"
+                style="-fx-border-color: black; -fx-background-color: white; -fx-font: TimesNewRoman; -fx-font-size: 18"
+                text="Завершение игры" onMouseClicked="#onEndGameButtonClick"/>
+        <Button fx:id="bExitGame"
+                style="-fx-border-color: black; -fx-background-color: white; -fx-font: TimesNewRoman; -fx-font-size: 18"
+                text="Выход из игры" onMouseClicked="#onExitGameButtonClick"/>
+    </VBox>
+    <GridPane fx:id="figurePane"
+              onMousePressed="#onFigurePanePressed"
+              onMouseDragged="#onFigurePaneDragged"
+              onMouseReleased="#onFigurePaneReleased"/>
+</Pane>
